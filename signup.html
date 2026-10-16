@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Записаться — megaGYM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="inner-page">
+
+<header class="header">
+
+    <!-- лого -->
+    <a href="index.html" class="logo">megaGYM</a>
+
+    <!-- гантель в лого -->
+    <div class="dumbbell" aria-label="Гантель">
+        <span class="weight left-weight"></span>
+        <span class="bar"></span>
+        <span class="weight right-weight"></span>
+    </div>
+
+    <!-- кнопки в лого -->
+    <nav class="nav">
+        <a href="about.html">подробнее о сайте</a>
+        <a href="signup.html" class="signup-link active">записаться</a>
+    </nav>
+</header>
+
+
+<main class="signup-page">
+    <section class="signup-intro">
+        <p class="eyebrow">ЗАПИСЬ В ЗАЛ</p>
+        <h1>Ваш спорт —<br>ваша сила.</h1>
+        <p>
+            Здесь вы можете выбрать день, когда вам
+            удобно будет прийти, если он не занят.
+        </p>
+    </section>
+
+    <section class="calendar-section">
+        <div class="calendar-header">
+            <button id="prevMonth" class="month-button" type="button">‹</button>
+            <h2 id="monthTitle"></h2>
+            <button id="nextMonth" class="month-button" type="button">›</button>
+        </div>
+
+        <div class="weekdays">
+            <span>ПН</span>
+            <span>ВТ</span>
+            <span>СР</span>
+            <span>ЧТ</span>
+            <span>ПТ</span>
+            <span>СБ</span>
+            <span>ВС</span>
+        </div>
+
+        <div id="calendar" class="calendar"></div>
+
+        <p id="selectedDate" class="selected-date">
+            Выберите удобную дату
+        </p>
+
+        <button id="signupButton" class="signup-button" type="button">
+            записаться
+        </button>
+    </section>
+</main>
+
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <button id="closeModal" class="modal-close" type="button">×</button>
+        <div class="success-icon">
+            <span></span>
+        </div>
+        <h2>Вы успешно записаны!</h2>
+        <p>Ждём вас в megaGYM.</p>
+        <button id="modalButton" class="signup-button" type="button">
+            отлично
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

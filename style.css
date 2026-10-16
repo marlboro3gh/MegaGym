@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+/* =========================
+   CSS ГАНТЕЛЬ
+========================= */
+
+.dumbbell {
+    position: absolute;
+    left: calc(50% + 88px);
+    width: 34px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dumbbell .bar {
+    width: 18px;
+    height: 5px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.dumbbell .weight {
+    position: absolute;
+    width: 7px;
+    height: 20px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.left-weight {
+    left: 1px;
+}
+
+.right-weight {
+    right: 1px;
+}
+
+.dumbbell::before,
+.dumbbell::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.dumbbell::before {
+    left: 7px;
+}
+
+.dumbbell::after {
+    right: 7px;
+}
+
+.nav {
+    position: absolute;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.72);
+    transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #fff;
+}
+
+.nav .signup-link {
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50px;
+    color: #fff;
+}
+
+.nav .signup-link:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* =========================
+   ГЛАВНАЯ
+========================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(90deg, rgba(25, 25, 25, 0.82), rgba(40, 40, 40, 0.38)),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2200&q=85")
+        center / cover no-repeat;
+}
+
+/* Серый слой поверх фотографии спортзала */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(65, 65, 65, 0.32);
+    mix-blend-mode: multiply;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin-left: 9%;
+    padding-top: 76px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.hero h1 {
+    max-width: 760px;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.96;
+    letter-spacing: -5px;
+    font-weight: 800;
+}
+
+.hero-text {
+    margin-top: 30px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 34px;
+    padding: 15px 27px;
+    border-radius: 50px;
+    background: #fff;
+    color: #111;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    background: #ddd;
+}
+
+/* =========================
+   ВНУТРЕННИЕ СТРАНИЦЫ
+========================= */
+
+.inner-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 80% 20%, #292929 0, transparent 30%),
+        #111;
+}
+
+.signup-page {
+    min-height: 100vh;
+    padding: 150px 9% 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.signup-intro h1 {
+    font-size: clamp(45px, 6vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+}
+
+.signup-intro > p:last-child {
+    max-width: 440px;
+    margin-top: 28px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+/* =========================
+   КАЛЕНДАРЬ
+========================= */
+
+.calendar-section {
+    width: 100%;
+    max-width: 500px;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.035);
+    border-radius: 22px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.calendar-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.month-button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.month-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.weekdays,
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+}
+
+.weekdays {
+    margin-bottom: 8px;
+}
+
+.weekdays span {
+    text-align: center;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.38);
+    font-weight: 600;
+}
+
+.day {
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.18s ease;
+}
+
+.day:hover:not(.empty):not(.disabled) {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.day.selected {
+    background: #d9d9d9;
+    color: #111;
+}
+
+.day.today {
+    outline: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.day.disabled {
+    color: rgba(255, 255, 255, 0.18);
+    cursor: not-allowed;
+}
+
+.day.empty {
+    cursor: default;
+}
+
+.selected-date {
+    min-height: 20px;
+    margin: 24px 0 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 13px;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    border-radius: 50px;
+    background: #fff;
+    color: #111;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.signup-button:hover {
+    transform: translateY(-2px);
+    background: #ddd;
+}
+
+.signup-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================
+   О САЙТЕ
+========================= */
+
+.about-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 7%;
+    text-align: center;
+}
+
+.about-content h1 {
+    margin-bottom: 24px;
+    font-size: clamp(55px, 9vw, 130px);
+    line-height: 1;
+    letter-spacing: -6px;
+}
+
+.about-content > p:last-child {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 16px;
+}
+
+/* =========================
+   МОДАЛЬНОЕ ОКНО
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    padding: 45px 35px 35px;
+    text-align: center;
+    border-radius: 22px;
+    background: #202020;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(15px);
+    transition: transform 0.25s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 17px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.success-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 23px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    position: relative;
+}
+
+.success-icon span::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 9px;
+    left: 18px;
+    top: 20px;
+    border-left: 3px solid #111;
+    border-bottom: 3px solid #111;
+    transform: rotate(-45deg);
+}
+
+.modal-content h2 {
+    font-size: 21px;
+}
+
+.modal-content p {
+    margin: 10px 0 25px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+}
+
+/* =========================
+   МОБИЛЬНАЯ АДАПТАЦИЯ
+========================= */
+
+@media (max-width: 800px) {
+    .header {
+        height: 68px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .dumbbell {
+        display: none;
+    }
+
+    .nav {
+        right: 20px;
+        gap: 12px;
+    }
+
+    .nav a {
+        font-size: 10px;
+    }
+
+    .nav .signup-link {
+        padding: 8px 12px;
+    }
+
+    .hero {
+        min-height: 100svh;
+        background-position: 62% center;
+    }
+
+    .hero-content {
+        margin: 0;
+        padding: 100px 25px 50px;
+    }
+
+    .hero h1 {
+        font-size: clamp(46px, 14vw, 72px);
+        letter-spacing: -3px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .signup-page {
+        grid-template-columns: 1fr;
+        padding: 120px 20px 50px;
+        gap: 45px;
+    }
+
+    .signup-intro h1 {
+        font-size: clamp(48px, 14vw, 70px);
+        letter-spacing: -3px;
+    }
+
+    .signup-intro > p:last-child {
+        font-size: 14px;
+    }
+
+    .calendar-section {
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    .day {
+        border-radius: 8px;
+    }
+
+    .about-page {
+        padding: 100px 25px;
+    }
+
+    .about-content h1 {
+        font-size: 70px;
+        letter-spacing: -4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav a:first-child {
+        display: none;
+    }
+
+    .header {
+        justify-content: flex-start;
+    }
+
+    .nav {
+        right: 16px;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .calendar-header h2 {
+        font-size: 16px;
+    }
+
+    .weekdays,
+    .calendar {
+        gap: 4px;
+    }
+
+    .day {
+        font-size: 12px;
+    }
+}
